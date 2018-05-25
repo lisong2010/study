@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  *  信号量
- *  当现成运行数等于信号量数量时，其他现成等待
+ *  当现成运行数等于信号量数量时，其他线程等待
  * @author lisong(OF2016)
  *         company qianmi.com
  *         Date    2018-05-25
