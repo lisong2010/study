@@ -1,4 +1,4 @@
-package com.lisong.question1;
+package question1;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;

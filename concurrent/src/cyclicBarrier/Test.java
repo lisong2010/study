@@ -1,4 +1,4 @@
-package com.lisong.cyclicBarrier;
+package cyclicBarrier;
 
 import java.util.ArrayList;
 import java.util.List;

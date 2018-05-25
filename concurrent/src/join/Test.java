@@ -1,4 +1,4 @@
-package com.lisong.join;
+package join;
 
 import java.util.concurrent.TimeUnit;
 
