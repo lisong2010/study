@@ -1,4 +1,4 @@
-package question1;
+package waitNotify;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;

@@ -1,4 +1,4 @@
-package question1;
+package waitNotify;
 
 import java.util.ArrayList;
 import java.util.List;
