@@ -25,8 +25,14 @@ public class Test {
                 System.out.println("into thread " + j + ", " + time);
 
                 try {
-                    Thread.sleep(time);
-                    cyclicbarrier.await();
+                    if(j == 9) {
+                        Thread.sleep(30000);
+                        cyclicbarrier.await();
+                    } else {
+                        Thread.sleep(time);
+                        cyclicbarrier.await();
+                    }
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (BrokenBarrierException e) {
