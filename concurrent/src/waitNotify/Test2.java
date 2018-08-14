@@ -1,12 +1,11 @@
 package waitNotify;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author lisong(OF2016)
- *         company qianmi.com
- *         Date    2018-05-25
+ * @author lisong(OF2016) company qianmi.com Date    2018-05-25
  */
 public class Test2 {
 
@@ -14,12 +13,13 @@ public class Test2 {
         Container container = new Container();
 
         CountDownLatch countDownLatch = new CountDownLatch(1);
-
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(2);
         new Thread(() -> {
             if (container.size() != 5) {
                 try {
                     countDownLatch.await();
-                } catch (InterruptedException e) {
+//                    cyclicBarrier.await();
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -31,7 +31,12 @@ public class Test2 {
                 container.add(new Object());
                 System.out.println("add " + i);
                 if (i == 5) {
-                    countDownLatch.countDown();
+                    try {
+                        countDownLatch.countDown();
+//                        cyclicBarrier.await();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
                 try {
                     TimeUnit.SECONDS.sleep(1);
