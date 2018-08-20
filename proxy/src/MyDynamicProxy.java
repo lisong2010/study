@@ -11,6 +11,7 @@ public class MyDynamicProxy {
         Hello hello = (Hello) Proxy
                 .newProxyInstance(HelloImpl.class.getClassLoader(), HelloImpl.class.getInterfaces(),
                         new MyInvocationHandler(new HelloImpl()));
+//        System.out.println(hello);
         hello.sayHello();
     }
 }
@@ -41,6 +42,7 @@ class MyInvocationHandler implements InvocationHandler {
             throws Throwable {
         System.out.println("invoke start");
         Object result = method.invoke(this.hello, args);
+        System.out.println(method);
         return result;
     }
 }

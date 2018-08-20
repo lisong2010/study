@@ -12,5 +12,8 @@ public class CLPreparation {
         System.out.println(ClassLoader.getSystemClassLoader());
         System.out.println(ClassLoader.getSystemClassLoader().getParent());
         System.out.println(ClassLoader.getSystemClassLoader().getParent().getParent());
+
+        Thread.currentThread().setContextClassLoader(ClassLoader.getSystemClassLoader().getParent());
+        System.out.println(Thread.currentThread().getContextClassLoader());
     }
 }
