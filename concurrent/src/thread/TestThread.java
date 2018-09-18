@@ -3,7 +3,8 @@ package thread;
 /**
  * @author lisong(OF2016) company qianmi.com Date    2018-08-10
  */
-public class TestThread implements Runnable{
+public class TestThread implements Runnable {
+
     @Override
     public void run() {
         System.out.println("hello wolrd");
@@ -21,6 +22,11 @@ public class TestThread implements Runnable{
         super.finalize();
     }
 
+    public static synchronized void method (){
+        //然后调用：Test.class.notify()...
+        TestThread.class.notify();
+    }
+
     public static void main(String[] args) throws InterruptedException {
         Thread hello = new Thread(new TestThread());
         hello.start();
@@ -28,5 +34,8 @@ public class TestThread implements Runnable{
         hello.join();
         System.gc();
         System.out.println("world hello");
+        method();
+
+        System.out.println(new Integer(129) == 2);
     }
 }
