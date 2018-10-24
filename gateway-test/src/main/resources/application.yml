@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: host_route
+        uri: http://httpbin.org:80
+        predicates:
+        - Path=/**
+        filters:
+        - StripPrefix=1
